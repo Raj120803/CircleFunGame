@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Circle - Draw to Perfection</title>
+    <meta name="description" content="Test your precision in this addictive circle drawing challenge. Can you reach 100% perfection?">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1 id="title">Perfect Circle</h1>
+            <p id="subtitle">Trace a round shape anywhere!</p>
+        </header>
+
+        <div id="canvas-wrapper">
+            <canvas id="game-canvas"></canvas>
+            <canvas id="confetti-canvas"></canvas>
+            
+            <div id="ui-overlay">
+                <div id="score-hud">
+                    <span id="live-percentage">0<span class="pct">%</span></span>
+                </div>
+                <div id="hint-text">Trace a round shape anywhere!</div>
+            </div>
+        </div>
+
+        <div id="result-overlay" class="hidden">
+            <div id="result-card">
+                <h2>Final Score</h2>
+                <div id="final-percentage">0.0%</div>
+                <div id="commentary">Not bad, but you can do better!</div>
+                <button id="restart-btn">Try Again</button>
+            </div>
+        </div>
+
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
