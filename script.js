@@ -9,6 +9,16 @@ const finalPercentage = document.getElementById('final-percentage');
 const commentary = document.getElementById('commentary');
 const restartBtn = document.getElementById('restart-btn');
 const hintText = document.getElementById('hint-text');
+const guideToggle = document.getElementById('guide-toggle');
+const guideCircle = document.getElementById('guide-circle');
+
+guideToggle.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        guideCircle.classList.remove('hidden');
+    } else {
+        guideCircle.classList.add('hidden');
+    }
+});
 
 let isDrawing = false;
 let points = [];

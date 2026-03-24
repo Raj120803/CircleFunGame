@@ -20,6 +20,7 @@
         <div id="canvas-wrapper">
             <canvas id="game-canvas"></canvas>
             <canvas id="confetti-canvas"></canvas>
+            <div id="guide-circle" class="hidden"></div>
             
             <div id="ui-overlay">
                 <div id="score-hud">
@@ -37,8 +38,15 @@
                 <button id="restart-btn">Try Again</button>
             </div>
         </div>
-
+        <div id="controls">
+            <label class="switch">
+                <input type="checkbox" id="guide-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="control-label">Make Easier</span>
         </div>
+
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
