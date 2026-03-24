@@ -152,21 +152,20 @@ function calculatePerfection(isFinal = false) {
 
     let smoothnessScore = 100 * (1 - (stdDev / avgRadius) * 2.5);
     
-    if (isFinal) {
-        const start = points[0];
-        const end = points[points.length - 1];
-        const gap = Math.sqrt(Math.pow(start.x - end.x, 2) + Math.pow(start.y - end.y, 2));
-        const gapPenalty = (gap / avgRadius) * 40;
-        perfection = Math.max(0, Math.min(100, smoothnessScore - gapPenalty));
-    } else {
-        perfection = Math.max(0, Math.min(100, smoothnessScore));
-    }
+    // Always compute gap penalty so live score matches final
+    const start = points[0];
+    const end = points[points.length - 1];
+    const gap = Math.sqrt(Math.pow(start.x - end.x, 2) + Math.pow(start.y - end.y, 2));
+    const gapPenalty = (gap / avgRadius) * 40;
+    
+    perfection = Math.max(0, Math.min(100, smoothnessScore - gapPenalty));
+
     
     updateUI(perfection);
 }
 
 function updateUI(value) {
-    const displayValue = Math.round(value);
+    const displayValue = value.toFixed(1);
     livePercentage.innerHTML = `${displayValue}<span class="pct">%</span>`;
     
     // Dynamic color for text
